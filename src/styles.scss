@@ -1,1 +1,212 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variable";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+/*** KEYFRAMES ***/
+
+@keyframes floating-smooth {
+    from {
+        transform: translate(0, 0px);
+    }
+
+    25% {
+        transform: translate(0, -2px);
+    }
+
+    65% {
+        transform: translate(0, 2px);
+    }
+
+    to {
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes floating-horizontal {
+    from {
+        transform: translate(0, 0px);
+    }
+
+    25% {
+        transform: translate(-2px, 0px);
+    }
+
+    65% {
+        transform: translate(2px, 0px);
+    }
+
+    to {
+        transform: translate(0, 0px);
+    }
+}
+
+/*** MIXINS ***/
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin google-fonts($font) {
+    @import url("https://fonts.googleapis.com/css?family=#{$font}");
+}
+
+/*********/
+
+@include google-fonts("Roboto+Slab");
+@include google-fonts("Varela+Round");
+
+.container {
+    margin: 0 auto;
+    min-width: 850px;
+
+    @include centerer;
+}
+
+.welcome-header {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+
+    // color: white;
+
+    .logo {
+        height: 70px;
+    }
+}
+
+.vertical-separator {
+    height: $container-height;
+    margin: 0 20px;
+    display: inline-block;
+    border-right: 1px solid lighten($accent-color, 30%);
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.field {
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: white;
+    border: 1px solid $accent-color;
+    border-radius: 20px;
+    padding-left: 20px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.balloon {
+    top: 10%;
+    right: 10%;
+    position: absolute;
+    animation-name: floating-smooth;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: $layer-front;
+}
+
+.btn {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+    margin: 20px auto;
+
+    // line-height: 0;
+    color: $accent-color;
+    transition: 500ms ease;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.btn-primary {
+    position: relative;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+    padding: 20px 40%;
+    line-height: 0;
+    color: white;
+    background: $accent-color;
+    border-radius: 10px;
+    transition: 500ms ease;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+}
+
+.login {
+    h1 {
+        font-size: 22px;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    padding: 20px;
+    overflow: hidden;
+    height: $container-height;
+    display: inline-block;
+    background-color: lighten($accent-color, 30%);
+    color: darken($accent-color, 30%);
+    width: 400px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+}
+
+.login-fields {
+    background-color: white;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+
+    input {
+        color: $accent-color;
+        border: none;
+        display: block;
+        margin: 0 auto;
+        height: 50%;
+        width: 80%;
+        border-bottom: 1px solid #eee;
+
+        &.last {
+            border: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

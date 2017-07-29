@@ -1,0 +1,81 @@
+@import "../../../variable";
+
+@keyframes floating-horizontal {
+    from {
+        transform: translate(0, 0px);
+    }
+
+    25% {
+        transform: translate(-15px, 0px);
+    }
+
+    65% {
+        transform: translate(15px, 0px);
+    }
+
+    to {
+        transform: translate(0, 0px);
+    }
+}
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: $layer-back;
+    background: filter-gradient(#499bea, #499bea, vertical);
+    background: linear-gradient(to bottom, rgba(73, 155, 234, 1) 0%, rgba(32, 124, 229, 1) 21%, rgba(73, 155, 234, 1) 47%, rgba(73, 155, 234, 1) 100%);
+}
+
+.back-layer-1 {
+    background-image: url(~/assets/img/mountains-back.png);
+    background-size: cover;
+    background-position-y: 250px;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: $layer-back1;
+}
+
+.back-layer-2 {
+    background-image: url(~/assets/img/mountains-mid1.png);
+    background-size: cover;
+    background-position-y: 250px;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: $layer-back1;
+}
+
+.cloud {
+    position: absolute;
+    width: 100px;
+    bottom: 20%;
+    animation-name: floating-horizontal;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @for $i from 1 through 4 {
+        &.position-#{$i} {
+            animation-delay: 0.5s * $i;
+            left: 20% * $i;
+
+            $pair: $i % 2 == 0;
+
+            @if $pair {
+                animation-direction: reverse;
+                bottom: 15% + 3;
+            }
+            @else {}
+        }
+    }
+}
