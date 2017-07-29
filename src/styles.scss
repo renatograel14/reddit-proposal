@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "variable";
+@import "app/theme/scss/theme";
 
 * {
     padding: 0;
@@ -50,23 +50,6 @@ body, html {
     }
 }
 
-/*** MIXINS ***/
-
-@mixin centerer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin google-fonts($font) {
-    @import url("https://fonts.googleapis.com/css?family=#{$font}");
-}
-
-/*********/
-
-@include google-fonts("Roboto+Slab");
-@include google-fonts("Varela+Round");
 
 .container {
     margin: 0 auto;

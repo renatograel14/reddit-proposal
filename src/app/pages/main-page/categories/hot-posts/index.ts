@@ -1,0 +1,1 @@
+export { HotPostsComponent } from './hot-posts.component';

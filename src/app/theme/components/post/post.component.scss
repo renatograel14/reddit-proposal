@@ -1,0 +1,58 @@
+:host {
+    margin: 20px 0;
+    display: block;
+    height: 150px;
+}
+
+.votation {
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+    height: 100%;
+    color: rgba(black, 0.5);
+    font-size: 30px;
+    text-align: center;
+    width: 15%;
+    float: left;
+
+    a {
+        color: rgba(black, 0.5);
+        text-decoration: none;
+        cursor: poiter;
+    }
+}
+
+.card {
+    float: left;
+    width: 80%;
+    height: 100%;
+
+    md-card-actions {
+        color: rgba(black, 0.5);
+        text-align: right;
+        width: 100%;
+    }
+}
+
+.header {
+    height: 80px;
+    overflow: hidden;
+}
+
+.header-image {
+    width: 20%;
+    float: left;
+    height: 100%;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+    }
+}
+
+.header-title {
+    padding-left: 20px;
+    width: 80%;
+    float: left;
+}
