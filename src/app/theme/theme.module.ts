@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { MenuComponent } from './components/menu';
 import { PostComponent } from './components/post';
-import { MdCardModule, MdButtonModule, MdIconModule } from "@angular/material";
+import { MdCardModule, MdButtonModule, MdIconModule, MdInputModule } from "@angular/material";
+import { SearchDirective } from './directives/search.directive';
 
 const components = [
     MenuComponent,
@@ -13,10 +14,11 @@ const components = [
     imports: [
         MdCardModule,
         MdButtonModule,
-        MdIconModule
+        MdIconModule,
+        MdInputModule
     ],
-    exports: [...components],
-    declarations: [...components],
+    exports: [...components, MdInputModule, MdIconModule],
+    declarations: [...components, SearchDirective],
     providers: [],
 })
 export class ThemeModule { }

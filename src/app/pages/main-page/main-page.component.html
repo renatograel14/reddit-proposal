@@ -1,18 +1,57 @@
 <menu></menu>
-<main>
+<main malihu-scrollbar [scrollbarOptions]="{ axis: 'yx', theme: 'minimal-dark' }">
     <router-outlet></router-outlet>
 </main>
 <aside class="side-bar">
-    <div class="separator-light">
-        subreggits
+    <div class="search">
+        <md-input-container class="example-full-width">
+            <input type="tel" mdInput placeholder="Search">
+            <md-icon mdSuffix>search</md-icon>
+        </md-input-container>
     </div>
-    <ul>
-        <li>Lorem.</li>
-        <li>Corrupti!</li>
-        <li>Dolores.</li>
-        <li>Consectetur!</li>
-        <li>Pariatur.</li>
-        <li>Sequi.</li>
-    </ul>
+    <div class="separator-light">
+        popular subreggits
+    </div>
+    <div class="list" malihu-scrollbar [scrollbarOptions]="{theme: 'minimal-dark' }">
+        <ul>
+            <li><a href="#">ASKREDDIT</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">FUNNY</a></li>
+            <li><a href="#">PICS</a></li>
+            <li><a href="#">WORLDNEWS</a></li>
+            <li><a href="#">TODAYILEARNED</a></li>
+            <li><a href="#">VIDEOS</a></li>
+            <li><a href="#">MOVIES</a></li>
+            <li><a href="#">GIFS</a></li>
+            <li><a href="#">AWW</a></li>
+            <li><a href="#">GAMING</a></li>
+            <li><a href="#">MILDLYINTERESTING</a></li>
+            <li><a href="#">SHOWERTHOUGHTS</a></li>
+            <li><a href="#">MUSIC</a></li>
+            <li><a href="#">JOKES</a></li>
+            <li><a href="#">SCIENCE</a></li>
+            <li><a href="#">IAMA</a></li>
+            <li><a href="#">NOTTHEONION</a></li>
+            <li><a href="#">OLDSCHOOLCOOL</a></li>
+            <li><a href="#">TELEVISION</a></li>
+            <li><a href="#">BOOKS</a></li>
+            <li><a href="#">LIFEPROTIPS</a></li>
+            <li><a href="#">TIFU-SPORTS</a></li>
+            <li><a href="#">EXPLAINLIKEIMFIVE</a></li>
+            <li><a href="#">FUTUROLOGY</a></li>
+            <li><a href="#">HISTORY</a></li>
+            <li><a href="#">FOOD</a></li>
+            <li><a href="#">PHOTOSHOPBATTLES</a></li>
+            <li><a href="#">DOCUMENTARIES</a></li>
+            <li><a href="#">DATAISBEAUTIFUL</a></li>
+            <li><a href="#">SPACE</a></li>
+            <li><a href="#">WRITINGPROMPTS</a></li>
+            <li><a href="#">UPLIFTINGNEWS</a></li>
+            <li><a href="#">TWOXCHROMOSOMES</a></li>
+            <li><a href="#">PERSONALFINANCE</a></li>
+            <li><a href="#">ASKSCIENCE</a></li>
+            <li><a href="#">ART</a></li>
+            <li><a href="#">MORE »</a></li>
+        </ul>
+    </div>
 </aside>
-    

@@ -1,6 +1,5 @@
 main {
-        height: calc(100% - 60px);
-
+    height: calc(100% - 60px);
     padding: 20px;
     float: left;
     overflow: auto;
@@ -10,8 +9,10 @@ main {
 .separator-light {
     text-align: center;
     width: 80%;
+    line-height: 20px;
+    padding: 20px 0;
     margin: 20px auto;
-    border-bottom: 1px solid lighten($accent-color, 30%);
+    border-bottom: 2px dashed lighten($accent-color, 30%);
 }
 
 aside {
@@ -24,8 +25,45 @@ aside {
         width: 20%;
         float: left;
 
+        .list {
+            height: 70%;
+        }
+
         ul {
             list-style: none;
+            padding: 10px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: white;
+                    display: block;
+                    padding: 3px 0;
+
+                    &:hover {
+                        color: $accent-color;
+                        background: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .search {
+        border-radius: 10px;
+        padding: 5px;
+        overflow: hidden;
+        background: white;
+        color: $accent-color;
+
+        md-input-container {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        md-icon {
+            color: rgba(black, 0.5);
         }
     }
 }
