@@ -13,6 +13,23 @@
     <span>welcome to</span>
     <img src="assets/logo.png" alt="" class="logo">
 </header>
+
+<div @flyInOut *ngIf="!openLoginForm">
+    <a class="mobile-btn-primary" (click)="openLoginForm=true"> Login </a>
+    <a class="mobile-btn-primary" href="/main-page"> Register </a>
+    <a class="mobile-btn" href="/main-page"> Enter without signin </a>
+</div>
+
+<div @flyInOut *ngIf="openLoginForm">
+    <div class="mobile-login-fields">
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password" class="last">7
+    </div>
+    <a class="mobile-btn-primary" href="/main-page"> Login </a>
+    <a class="mobile-btn" (click)="openLoginForm=false" > back </a>
+</div>
+<a class="mobile-bottom-btn" href="/main-page"> What is Reggit? </a>
+
 <div class="container">
     <div class="login">
         <h1>Sign in</h1>
@@ -20,7 +37,7 @@
             <input type="text" placeholder="username">
             <input type="password" placeholder="password" class="last">
         </div>
-        <a  class="btn-primary" href="/main-page"> Login </a>
+        <a class="btn-primary" href="/main-page"> Login </a>
     </div>
     <div class="vertical-separator"> </div>
     <div class="login">

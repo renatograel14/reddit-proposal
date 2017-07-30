@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MdButtonModule, MdIconModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { ThemeModule } from './theme/theme.module';
     ...routedComponents,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -1,4 +1,5 @@
 @import 'variables';
-@import 'mixins';
+@import '~breakpoint-sass/stylesheets/breakpoint';
 @import 'lib/angular-material';
 @import 'lib/susy';
+@import 'mixins';
