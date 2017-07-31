@@ -5,27 +5,27 @@
         <div class="user">
             <img src="assets/img/user.png" alt="">
         </div>
+        <nav-posts></nav-posts>
+    </md-sidenav>
+    <md-sidenav #sidenavRight align="start" class="mobile-menu">
         <div class="search">
             <md-input-container class="example-full-width">
                 <input type="tel" mdInput placeholder="Search">
                 <md-icon mdSuffix>search</md-icon>
             </md-input-container>
         </div>
-        <nav-posts></nav-posts>
-    </md-sidenav>
-    <md-sidenav #sidenavRight align="start" class="mobile-menu">
-        <subreggits></subreggits>
+        <subreddits></subreddits>
     </md-sidenav>
     <main malihu-scrollbar [scrollbarOptions]="{ axis: 'yx', theme: 'minimal-dark' }">
         <router-outlet></router-outlet>
     </main>
-    <aside class="side-bar">
+    <!--<aside class="side-bar">
         <div class="search">
             <md-input-container class="example-full-width">
                 <input type="tel" mdInput placeholder="Search">
                 <md-icon mdSuffix>search</md-icon>
             </md-input-container>
         </div>
-        <subreggits></subreggits>
-    </aside>
+        <subreddits></subreddits>
+    </aside>-->
 </md-sidenav-container>

@@ -1,7 +1,7 @@
 <nav id="menu">
-    <section class="logo">
-        <a href="/">
-            <img src="assets/logo.png" alt="">
+    <section class="logo" >
+        <a (click)="openLeftMenu()" >
+            <img src="assets/logo.png" [class.accent]="accent" alt="">
         </a>
     </section>
     <nav-posts></nav-posts>

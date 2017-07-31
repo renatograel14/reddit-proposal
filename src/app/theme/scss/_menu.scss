@@ -17,8 +17,15 @@
 
         img {
             @include centerer;
-
+            cursor: pointer;
             height: 40px;
+            transition: 300ms;
+            &.accent {
+                box-sizing: content-box;
+                padding: 5px;
+                box-shadow: 0 0 2px 2px #eee;
+                z-index: 9000;
+            }
         }
     }
 
@@ -104,7 +111,6 @@
     }
 
     .user {
-
         padding-top: 5px;
         text-align: center;
         width: 100%;

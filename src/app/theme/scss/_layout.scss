@@ -26,6 +26,7 @@ body, html {
 }
 
 md-sidenav-container {
+    background: white !important;
     height: calc(100% - 60px);
 }
 
@@ -34,9 +35,17 @@ main {
     padding: 20px;
     float: left;
     overflow: auto;
-    width: 80%;
+    padding: 0 200px;
+    width: 100%;
+
+    @include breakpoint($medium $large) {
+        padding: 0 150px;
+    }
+
 
     @include breakpoint($tiny $medium) {
+        padding: 0;
+        margin: 0;
         width: 100%;
     }
 }

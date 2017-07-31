@@ -1,6 +1,6 @@
 import { ReggitPage } from './app.po';
 
-describe('reggit App', () => {
+describe('reddit App', () => {
   let page: ReggitPage;
 
   beforeEach(() => {
