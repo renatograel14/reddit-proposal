@@ -21,8 +21,11 @@
     text-decoration: none;
     margin: 20px auto;
     color: white;
-}
 
+    @include breakpoint($medium) {
+        display: none;
+    }
+}
 
 .mobile-bottom-btn {
     width: 100%;
@@ -34,6 +37,10 @@
     text-decoration: none;
     margin: 20px auto;
     color: white;
+
+    @include breakpoint($medium) {
+        display: none;
+    }
 }
 
 .mobile-btn-primary {
@@ -43,7 +50,7 @@
     text-decoration: none;
     display: block;
     width: 80%;
-    padding: 20px ;
+    padding: 20px;
     line-height: 0;
     color: $accent-color;
     background: white;

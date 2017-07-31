@@ -8,10 +8,14 @@ body, html {
     height: 100%;
 }
 
-
 .mobile-container {
     @include centerer;
+
     width: 100%;
+}
+
+.clr {
+    clear: both;
 }
 
 .container {
@@ -21,12 +25,43 @@ body, html {
     @include centerer;
 }
 
-main {
+md-sidenav-container {
     height: calc(100% - 60px);
+}
+
+main {
+    height: 100%;
     padding: 20px;
     float: left;
     overflow: auto;
     width: 80%;
+
+    @include breakpoint($tiny $medium) {
+        width: 100%;
+    }
+}
+
+.list {
+    height: 50%;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+
+    li {
+        a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 3px 0;
+
+            &:hover {
+                color: $accent-color;
+                background: white;
+            }
+        }
+    }
 }
 
 .separator-light {
@@ -38,55 +73,36 @@ main {
     border-bottom: 2px dashed lighten($accent-color, 30%);
 }
 
-aside {
-    height: calc(100% - 60px);
+.side-bar {
+    display: none;
+    height: 100%;
 
-    &.side-bar {
-        background: $accent-color;
-        color: white;
-        padding: 20px;
-        width: 20%;
-        float: left;
-
-        .list {
-            height: 70%;
-        }
-
-        ul {
-            list-style: none;
-            padding: 10px;
-
-            li {
-                a {
-                    text-decoration: none;
-                    color: white;
-                    display: block;
-                    padding: 3px 0;
-
-                    &:hover {
-                        color: $accent-color;
-                        background: white;
-                    }
-                }
-            }
-        }
+    @include breakpoint($medium) {
+        display: initial;
     }
 
-    .search {
-        border-radius: 10px;
-        padding: 5px;
-        overflow: hidden;
-        background: white;
-        color: $accent-color;
 
-        md-input-container {
-            display: block;
-            margin: 0 auto;
-            width: 80%;
-        }
+    background: $accent-color;
+    color: white;
+    padding: 0 20px;
+    width: 20%;
+    float: left;
+}
 
-        md-icon {
-            color: rgba(black, 0.5);
-        }
+.search {
+    border-radius: 10px;
+    padding: 5px;
+    overflow: hidden;
+    background: white;
+    color: $accent-color;
+
+    md-input-container {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    md-icon {
+        color: rgba(black, 0.5);
     }
 }

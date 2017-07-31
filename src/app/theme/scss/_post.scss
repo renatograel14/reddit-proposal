@@ -1,0 +1,96 @@
+.votation {
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+    height: 100%;
+    color: rgba(black, 0.5);
+    font-size: 30px;
+    text-align: center;
+    width: 15%;
+    float: left;
+
+    a {
+        color: rgba(black, 0.5);
+        text-decoration: none;
+
+        md-icon {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+            &:hover {
+                transform: scale(2);
+            }
+        }
+    }
+}
+
+.card {
+    float: left;
+    width: 80%;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    md-card-actions {
+        color: rgba(black, 0.5);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+
+        md-icon {
+            margin: 5px 0;
+            float: right;
+            display: block;
+            width: span(1 of 5 narrow set-gutters 0);
+        }
+    }
+}
+
+.mobile-header {
+    width: 100%;
+    overflow: hidden;
+
+    @include breakpoint($small) {
+        display: none !important;
+    }
+}
+
+.header {
+    @include breakpoint($tiny $small) {
+        display: none !important;
+    }
+
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-image {
+    @include breakpoint($small) {
+        width: 20%;
+        float: left;
+        height: 100%;
+    }
+
+
+    img {
+        margin: 0 auto;
+        display: block;
+
+        @include breakpoint($small) {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+}
+
+.header-title {
+    @include breakpoint($small) {
+        float: left;
+        width: 80%;
+        padding-left: 20px;
+    }
+}

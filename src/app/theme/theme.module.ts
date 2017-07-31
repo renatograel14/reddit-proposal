@@ -2,12 +2,16 @@ import { NgModule } from '@angular/core';
 
 import { MenuComponent } from './components/menu';
 import { PostComponent } from './components/post';
-import { MdCardModule, MdButtonModule, MdIconModule, MdInputModule } from "@angular/material";
-import { SearchDirective } from './directives/search.directive';
+import { MdCardModule, MdButtonModule, MdIconModule, MdInputModule, MdDialog } from "@angular/material";
+import { NavPostsComponent } from './components/nav-posts/nav-posts.component';
+import { SubreggitsComponent } from './components/subreggits/subreggits.component';
+import { MalihuScrollbarModule } from "ngx-malihu-scrollbar";
 
 const components = [
     MenuComponent,
-    PostComponent
+    PostComponent,
+    NavPostsComponent,
+    SubreggitsComponent
 ]
 
 @NgModule({
@@ -15,10 +19,11 @@ const components = [
         MdCardModule,
         MdButtonModule,
         MdIconModule,
-        MdInputModule
+        MdInputModule,
+        MalihuScrollbarModule.forRoot(),
     ],
     exports: [...components, MdInputModule, MdIconModule],
-    declarations: [...components, SearchDirective],
-    providers: [],
+    declarations: [...components],
+    providers: [MdDialog],
 })
 export class ThemeModule { }

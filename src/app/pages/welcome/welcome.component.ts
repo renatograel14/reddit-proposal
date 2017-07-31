@@ -17,9 +17,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class WelcomeComponent implements OnInit {
 	public openLoginForm: boolean;
+	public register: boolean;
 	constructor() { }
 
 	ngOnInit() {
 		this.openLoginForm = false;
+		this.register = false;
 	}
 }

@@ -16,17 +16,17 @@
 
 <div @flyInOut *ngIf="!openLoginForm">
     <a class="mobile-btn-primary" (click)="openLoginForm=true"> Login </a>
-    <a class="mobile-btn-primary" href="/main-page"> Register </a>
+    <a class="mobile-btn-primary" (click)="openLoginForm=true; register=true"> Register </a>
     <a class="mobile-btn" href="/main-page"> Enter without signin </a>
 </div>
 
 <div @flyInOut *ngIf="openLoginForm">
-    <div class="mobile-login-fields">
+    <div class="mobile-login-fields" [class.sign-up]="register">
         <input type="text" placeholder="username">
         <input type="password" placeholder="password" class="last">7
     </div>
-    <a class="mobile-btn-primary" href="/main-page"> Login </a>
-    <a class="mobile-btn" (click)="openLoginForm=false" > back </a>
+    <a class="mobile-btn-primary" href="/main-page"> {{register ? 'Sign-up' : 'Sign-in'}}</a>
+    <a class="mobile-btn" (click)="openLoginForm=false; register=false" > back </a>
 </div>
 <a class="mobile-bottom-btn" href="/main-page"> What is Reggit? </a>
 
